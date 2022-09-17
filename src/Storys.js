@@ -1,7 +1,5 @@
 import React from 'react';
 
-
-
 function Story(props) {
 
   return (
@@ -17,9 +15,8 @@ function Story(props) {
 
 }
 
-
 export default function Storys() {
-  const perfil = [
+  const profile = [
     { user: "9gag", imageUser: "assets/img/9gag.svg" },
     { user: "meowed", imageUser: "assets/img/meowed.svg" },
     { user: "barked", imageUser: "assets/img/barked.svg" },
@@ -32,13 +29,12 @@ export default function Storys() {
   ];
 
 
-  const perfilUser = perfil.map((c) => <Story image={c.imageUser} user={c.user} />);
-
+  const profileUser = profile.map((c) => <Story image={c.imageUser} user={c.user} />);
 
   return (
     <div class="stories">
 
-      {perfilUser}
+      {profileUser}
 
       <div class="setinha">
         <ion-icon name="chevron-forward-circle"></ion-icon>

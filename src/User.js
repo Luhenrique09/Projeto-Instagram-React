@@ -1,22 +1,35 @@
 import React from "react";
 
 function Usuario(props) {
-    return(
+    const [nome, setNome] = React.useState(props.name);
+    const [photo, setPhoto] = React.useState(props.image)
+    function insertName() {
+        setNome(prompt("Digite seu nome:"));
+
+    }
+
+    function insertPhoto(){
+        setPhoto(prompt("Digite a url da imagem:"))
+    }
+
+    return (
         <div class="usuario">
-            <img src={props.image} />
+            <img onClick={insertPhoto} src={photo} />
             <div class="texto">
-                <strong>{props.user}</strong>
+                <strong>{nome}driven</strong>
                 <span>
-                    {props.name}
-                    <ion-icon name="pencil"></ion-icon>
+                    {nome}
+                    <ion-icon onClick={insertName} name="pencil"></ion-icon>
                 </span>
             </div>
         </div>
     )
+    
 }
 
 export default function User() {
+    
     return (
-        <Usuario image="assets/img/catanacomics.svg" user="catanacomics" name="Catana" />
+        <Usuario name="Catana" image="assets/img/catanacomics.svg"/>
     )
 }
